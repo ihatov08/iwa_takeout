@@ -15,6 +15,17 @@
 
   <body>
     <%= render "shared/header" %>
+    <% flash.each do |type, message| %>
+      <% key = {"notice" => "success", "alert" => "danger"}[type] %>
+      <% if key %>
+        <div class="alert alert-<%= key %>">
+          <%= message %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    <% end %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
