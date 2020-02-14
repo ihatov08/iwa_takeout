@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_064253) do
+ActiveRecord::Schema.define(version: 2020_02_14_065121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2020_02_14_064253) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["prefecture_id", "name", "name_en"], name: "index_cities_on_prefecture_id_and_name_and_name_en", unique: true
     t.index ["prefecture_id"], name: "index_cities_on_prefecture_id"
+  end
+
+  create_table "gallery_images", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.string "image", null: false
+    t.integer "order", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_gallery_images_on_listing_id"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -93,6 +102,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_064253) do
   end
 
   add_foreign_key "cities", "prefectures"
+  add_foreign_key "gallery_images", "listings"
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "cities"
   add_foreign_key "listings", "prefectures"
