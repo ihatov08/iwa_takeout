@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  category: one
+  postal_code: MyString
+  prefecture: one
+  city: one
+  address: MyString
+  title: MyString
+  description: MyText
+  main_image: MyString
+  price: 1
+  published: false
+
+two:
+  user: two
+  category: two
+  postal_code: MyString
+  prefecture: two
+  city: two
+  address: MyString
+  title: MyString
+  description: MyText
+  main_image: MyString
+  price: 1
+  published: false
