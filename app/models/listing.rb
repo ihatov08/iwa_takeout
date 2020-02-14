@@ -11,4 +11,6 @@ class Listing < ApplicationRecord
     validates :description
     validates :price
   end
+
+  mount_uploader :main_image, ImageUploader
 end
