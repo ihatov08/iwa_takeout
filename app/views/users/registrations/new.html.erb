@@ -32,7 +32,11 @@
               <% end %>
               <p>ソーシャルログイン</p>
               <ul class="social-btns list-unstyled">
-                <li class="list-inline-item bg-facebook"><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item bg-facebook">
+                  <%= link_to user_facebook_omniauth_authorize_path do %>
+                    <i class="fab fa-facebook-f"></i>
+                  <% end %>
+                </li>
               </ul>
             </div>
           </div>

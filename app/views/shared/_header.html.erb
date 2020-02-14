@@ -12,7 +12,13 @@
         </ul>
 
         <div class="my-2 my-lg-0">
-          <%= link_to "新規登録", new_user_registration_path, class: "btn p1" %>
+          <% if user_signed_in? %>
+            <%= image_tag current_user.avatar.url, class: "rounded-circle", size: "50x50" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn p1" %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: "btn p1" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "btn p1" %>
+          <% end %>
         </div>
       </div>
     </nav>
