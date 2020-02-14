@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
+  has_many :listings, dependent: :destroy
+
   def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
      user.email = auth.info.email
