@@ -44,6 +44,7 @@ ja:
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
       unauthenticated: アカウント登録もしくはログインしてください。
       unconfirmed: メールアドレスの本人確認が必要です。
+  users:
     mailer:
       confirmation_instructions:
         action: メールアドレスの確認
@@ -112,6 +113,8 @@ ja:
       already_signed_out: 既にログアウト済みです。
       new:
         sign_in: ログイン
+        forgot_your_password: パスワードを忘れましたか?
+        didn_t_receive_confirmation_instructions: アカウント確認のメールを受け取っていませんか?
       signed_in: ログインしました。
       signed_out: ログアウトしました。
     shared:
