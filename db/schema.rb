@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_062626) do
+ActiveRecord::Schema.define(version: 2020_02_14_064253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,26 @@ ActiveRecord::Schema.define(version: 2020_02_14_062626) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["prefecture_id", "name", "name_en"], name: "index_cities_on_prefecture_id_and_name_and_name_en", unique: true
     t.index ["prefecture_id"], name: "index_cities_on_prefecture_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.string "postal_code", null: false
+    t.bigint "prefecture_id", null: false
+    t.bigint "city_id", null: false
+    t.string "address", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.string "main_image"
+    t.integer "price", null: false
+    t.boolean "published", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_listings_on_category_id"
+    t.index ["city_id"], name: "index_listings_on_city_id"
+    t.index ["prefecture_id"], name: "index_listings_on_prefecture_id"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "prefectures", force: :cascade do |t|
@@ -73,4 +93,8 @@ ActiveRecord::Schema.define(version: 2020_02_14_062626) do
   end
 
   add_foreign_key "cities", "prefectures"
+  add_foreign_key "listings", "categories"
+  add_foreign_key "listings", "cities"
+  add_foreign_key "listings", "prefectures"
+  add_foreign_key "listings", "users"
 end
