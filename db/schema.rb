@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
     t.string "provider"
     t.string "uid"
     t.string "name", null: false
-    t.string "avatar", null: false
+    t.string "avatar"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
