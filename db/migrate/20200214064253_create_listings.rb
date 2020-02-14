@@ -3,15 +3,15 @@ class CreateListings < ActiveRecord::Migration[6.0]
     create_table :listings do |t|
       t.references :user, null: false, foreign_key: true
       t.references :category, null: false, foreign_key: true
-      t.string :postal_code
+      t.string :postal_code, null: false
       t.references :prefecture, null: false, foreign_key: true
       t.references :city, null: false, foreign_key: true
-      t.string :address
-      t.string :title
-      t.text :description
+      t.string :address, null: false
+      t.string :title, null: false
+      t.text :description, null: false
       t.string :main_image
-      t.integer :price
-      t.boolean :published
+      t.integer :price, null: false
+      t.boolean :published, null: false, default: false
 
       t.timestamps
     end
