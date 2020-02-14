@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_062114) do
+ActiveRecord::Schema.define(version: 2020_02_14_062626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2020_02_14_062114) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.bigint "prefecture_id", null: false
+    t.string "name", null: false
+    t.string "name_en", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prefecture_id", "name", "name_en"], name: "index_cities_on_prefecture_id_and_name_and_name_en", unique: true
+    t.index ["prefecture_id"], name: "index_cities_on_prefecture_id"
   end
 
   create_table "prefectures", force: :cascade do |t|
@@ -62,4 +72,5 @@ ActiveRecord::Schema.define(version: 2020_02_14_062114) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "cities", "prefectures"
 end
