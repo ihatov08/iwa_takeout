@@ -1,2 +1,89 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<div class="common-header" style="background-image: url(<%= asset_path 'nature.jpg' %>)">
+  <div class="overlay opc-5"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 col-12">
+        <h2>リスティング一覧</h2>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="text-md-right">
+          <%= link_to "HOME", :root %> / <%= link_to "LISTINGS", "#" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pd-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4 col-lg-12">
+        <div class="form-group">
+          <label class="pb-30" for="list-title">リスティング検索</label>
+          <input id="list-title" type="text" class="form-control filter-input" placeholder="I'm looking for...">
+        </div>
+        <div class="form-group">
+          <input id="keywords" type="text" class="form-control filter-input" placeholder="Location">
+        </div>
+        <div class="form-group">
+          <select class="form-control custom-select" id="exampleFormControlSelect2">
+            <option selected="">Select Categories</option>
+            <option>Art's</option>
+            <option>Health</option>
+            <option>Hotels</option>
+            <option>Real Estate</option>
+          </select>
+        </div>
+        <div class="apply-btn">
+          <a href="" class="btn p1">Apply</a>
+        </div>
+      </div>
+      <div class="col-xl-8 col-lg-12">
+        <div class="row">
+          <div class="col-12">
+            <div class="pb-30 text-sm-right">
+            </div>
+          </div>
+          <% @listings.each do |listing| %>
+            <div class="col-lg-6 col-md-12 col-12">
+              <div class="card">
+                <%= link_to listing do %>
+                <div class="place-img">
+                    <%= image_tag listing.main_image.url, class: "listing-main-image" %>
+                  </div>
+                  <div class="card-bottom">
+                    <div class="shop-name">
+                      <%= listing.title %>
+                    </div>
+                    <div class="shop-location-wrapper">
+                      <div class="shop-location"><i class="fas fa-map-marker-alt"></i><%= listing.full_address %></div>
+                      <div class="shop-location"><i class="fas fa-money-check"></i><%= number_to_currency listing.price %></div>
+                    </div>
+                    <div class="shop-bottom d-flex border-top">
+                      <div class="shop-icon"><span class="shop-icon-bg shop-icon-bg-green"><i class="fas fa-hotel"></i></span> <a href="">宿泊</a></div>
+                      <div class="shop-time col text-right"><span class="open">Open</span></div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="pages text-center">
+                  <ul>
+                    <li class="active"><a href="">1</a></li>
+                    <li ><a href="">2</a></li>
+                    <li ><a href="">3</a></li>
+                    <li ><a href="">4</a></li>
+                    <li ><a href=""><i class="fas fa-chevron-right"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
