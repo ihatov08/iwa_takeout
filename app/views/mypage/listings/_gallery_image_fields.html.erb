@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= image_tag(f.object.image.url) if f.object.image? %>
+      <%= f.file_field :image, class: "form-control filter-input" %>
+      <%= f.label :order %>
+      <%= f.number_field :order, class: "form-control filter-input" %>
+      <%= f.hidden_field :image_cache %>
+      <br>
+      <%= link_to_remove_association "画像を削除", f, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

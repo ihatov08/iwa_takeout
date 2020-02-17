@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      gallery_image:
+        image: ギャラリー画像
+        order: 並び順

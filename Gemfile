@@ -34,6 +34,7 @@ gem 'letter_opener_web'
 gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'seed-fu'
+gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
