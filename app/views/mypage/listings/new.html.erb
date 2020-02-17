@@ -1,2 +1,25 @@
-<h1>Mypage::Listings#new</h1>
-<p>Find me in app/views/mypage/listings/new.html.erb</p>
+<div class="common-header" style="background-image: url(<%= asset_path 'london.jpg' %>)">
+  <div class="overlay opc-5"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 col-12">
+        <h2>リスティング追加</h2>
+      </div>
+      <div class="col-md-6 col-12">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pd-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="booking-ttl">
+          <i class="fas fa-info-circle"></i>リスティング新規作成
+        </div>
+        <%= render partial: "shared/errors", locals: {resource: @listing} %>
+        <%= render partial: "form", locals: {listing: @listing} %>
+      </div>
+    </div>
+  </div>
+</div>

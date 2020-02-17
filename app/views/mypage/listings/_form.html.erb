@@ -1,0 +1,102 @@
+<%= form_with model: [:mypage, listing], local: true do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :category_id %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, {}, class: "form-control custom-select" %>
+      </div>
+    </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :postal_code %>
+      <%= f.text_field :postal_code, class: "form-control", placeholder: "000-0000" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :prefecture_id %>
+      <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, class: "form-control custom-select" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :city_id %>
+      <%= f.grouped_collection_select :city_id, Prefecture.all, :cities, :name, :id, :name, {}, class: "form-control custom-select" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_field :address, class: "form-control", placeholder: "1-1 defsharingマンション 505号室" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.number_field :price, class: "form-control", placeholder: 5000 %>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control filter-input", placeholder: "駅から徒歩５分のアクセス抜群です", row: 5 %>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= f.label :main_image %>
+      <%= image_tag(listing.main_image.url) if listing.main_image? %>
+            <%= f.file_field :main_image, class: "form-control filter-input" %>
+      <%= f.check_box :remove_main_image %>
+      <%= f.label :remove_main_image %>
+      <%= f.hidden_field :main_image_cache %>
+    </div>
+  </div>
+
+  <div id="gallery_images">
+    <%= f.fields_for :gallery_images do |image| %>
+      <%= render "gallery_image_fields", f: image %>
+    <% end %>
+    <div class="col-md-12">
+      <div class="form-group">
+        <div class="links">
+          <%= link_to_add_association '画像を追加', f, :gallery_images, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= f.label :published %>
+      <div class="checkbox-wrapper">
+        <div class="accept custom-checkbox custom-control-inline">
+          <%= f.radio_button :published, true %>
+          公開
+        </div>
+        <div class="accept custom-checkbox custom-control-inline">
+          <%= f.radio_button :published, false %>
+          非公開
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <%= f.submit class: "btn p1" %>
+  </div>
+<% end %>
