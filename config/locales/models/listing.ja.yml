@@ -11,3 +11,5 @@ ja:
         prefecture_id: 都道府県
         city_id: 市区町村
         main_image: メイン画像
+        published: 公開設定
+        remove_main_image: メイン画像を削除する
