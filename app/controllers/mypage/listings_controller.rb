@@ -6,6 +6,8 @@ class Mypage::ListingsController < ApplicationController
   end
 
   def show
+    @listing = current_user.listings.find(params[:id])
+    render "listings/show"
   end
 
   def new
