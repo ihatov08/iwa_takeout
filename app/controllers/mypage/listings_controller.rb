@@ -1,6 +1,6 @@
 class Mypage::ListingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_listing, only: %i[show edit update]
+  before_action :set_listing, only: %i[show edit update destroy]
 
   def index
     @listings = current_user.listings
@@ -38,6 +38,8 @@ class Mypage::ListingsController < ApplicationController
   end
 
   def destroy
+    @listing.destroy
+    redirect_to mypage_listings_path, notice: "リスティングの削除に成功しました"
   end
 
   private
