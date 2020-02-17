@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      listing:
+        postal_code: 郵便番号
+        address: 住所
+        title: タイトル
+        description: 詳細
+        price: 価格
+        category_id: カテゴリ
+        prefecture_id: 都道府県
+        city_id: 市区町村
+        main_image: メイン画像
