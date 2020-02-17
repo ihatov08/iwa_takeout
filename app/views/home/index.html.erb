@@ -1,2 +1,32 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <div class="row pd-80">
+    <div class="col-md-8 offset-md-2 text-center">
+      <h2 class="section-ttl">ピックアップ</h2>
+    </div>
+
+    <% Listing.limit(3).each do |listing| %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= link_to listing do %>
+          <div class="place-img">
+              <%= image_tag listing.main_image.url, class: "listing-main-image" %>
+            </div>
+            <div class="card-bottom">
+              <div class="shop-name">
+                <%= listing.title %>
+              </div>
+              <div class="shop-location-wrapper">
+                <div class="shop-location"><i class="fas fa-map-marker-alt"></i><%= listing.full_address %></div>
+                <div class="shop-location"><i class="fas fa-money-check"></i><%= number_to_currency listing.price %></div>
+              </div>
+              <div class="shop-bottom d-flex border-top">
+                <div class="shop-icon"><span class="shop-icon-bg shop-icon-bg-green"><i class="fas fa-hotel"></i></span> <a href="">宿泊</a></div>
+                <div class="shop-time col text-right"><span class="open">Open</span></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

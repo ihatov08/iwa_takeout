@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     resources :listings
   end
 
+  resources :listings, only: %i[index show]
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
