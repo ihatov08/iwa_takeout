@@ -1,12 +1,12 @@
 class Mypage::ListingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_listing, only: %i[show edit update]
 
   def index
     @listings = current_user.listings
   end
 
   def show
-    @listing = current_user.listings.find(params[:id])
     render "listings/show"
   end
 
@@ -29,6 +29,12 @@ class Mypage::ListingsController < ApplicationController
   end
 
   def update
+    if @listing.update(listing_params)
+      redirect_to [:mypage, @listing], notice: "リスティングの更新に成功しました"
+    else
+      flash.now[:alert] = "リスティングの更新に失敗しました"
+      render :edit
+    end
   end
 
   def destroy
@@ -50,5 +56,9 @@ class Mypage::ListingsController < ApplicationController
       :main_image_cache,
       gallery_images_attributes: %i[image_cache id image order _destroy]
     )
+  end
+
+  def set_listing
+    @listing = current_user.listings.find(params[:id])
   end
 end
