@@ -1,0 +1,107 @@
+<% if @listing.user_id == current_user&.id %>
+  <div class="alert alert-warning">
+    あなたのリスティングです
+    <%= link_to "戻る", mypage_listings_path, class: "btn btn-warning" %>
+  </div>
+<% end %>
+<%= render partial: "shared/errors", locals: {resource: @booking} %>
+<div class="listing-detail-header" style="background-image: url(<%= @listing.main_image.url %>)">
+  <div class="overlay opc-3"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="listing-detail-ttl">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-12">
+              <a href="" class="clear-btn listing-btn"><%= @listing.category.name %></a>
+              <h2><%= @listing.title %> <i class="far fa-check-square"></i></h2>
+              <div class="listing-location"><i class="fas fa-map-marker-alt"></i> <%= @listing.full_address %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="user-profile-main pd-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="user-profile-menu">
+          <ul class="nav nav-tabs user-profile-tab" style="margin-bottom:20px;">
+            <li class="nav-item"><a href="#overview" class="nav-link">概要</a></li>
+            <li class="nav-item"><a href="#gallery" class="nav-link">ギャラリー</a></li>
+          </ul>
+        </div>
+        <div id="overview">
+          <div class="overview-top">
+            <h3>概要</h3>
+              <%= simple_format @listing.description %>
+          </div>
+        </div>
+        <div id="gallery" class="pd-top-80">
+          <h3>ギャラリー</h3>
+          <div class="carousel-wrapper carousel-gallery">
+            <div id="carouselOption3" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <% @listing.gallery_images.each_with_index() do |_, i| %>
+                  <li data-target="#carouselOption3" data-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : '' %>"></li>
+                <% end %>
+              </ol>
+              <div class="carousel-inner">
+                <% @listing.gallery_images.each_with_index do |image, i| %>
+                  <div class="carousel-item <%= i == 0 ? 'active' : '' %>">
+                    <%= image_tag image.image.url, class: "d-block w-100" %>
+                  </div>
+                <% end %>
+              </div>
+              <a class="carousel-control-prev" href="#carouselOption3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">前へ</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselOption3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">次へ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="sidebar-widget">
+          <div class="mylist-widget ">
+            <div class="business-ttl">
+              <h3><i class="fas fa-book"></i> 予約</h3>
+            </div>
+            <hr>
+            <%= form_with local: true, id: "booking-form" do |f| %>
+              <div class="row calendar">
+                <div class="col-md-6 check-in">
+                  <div id="datepicker-from" class="input-group">
+                    <%= f.text_field :check_in, class: "form-control datepicker", placeholder: "チェックイン" %>
+                    <span><i class="far fa-calendar-alt"></i></span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div id="datepicker-to" class="input-group">
+                    <%= f.text_field :check_out, class: "form-control datepicker", placeholder: "チェックアウト" %>
+                    <span><i class="far fa-calendar-alt"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="request-btn text-center">
+                <%= f.submit "予約する", class: "btn btn-info" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('.datepicker').datepicker({
+    format: 'yyyy/mm/dd',
+    startDate: "<%= l(Date.current.next_day) %>"
+  });
+</script>
