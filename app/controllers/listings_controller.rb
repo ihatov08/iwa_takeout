@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.published
+    @q = Listing.published.ransack(params[:q])
+    @listings = @q.result(distinct: true)
   end
 end
