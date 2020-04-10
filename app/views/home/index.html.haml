@@ -11,7 +11,10 @@
                 %li{"data-v-79b2de20" => ""}
                   %a{"data-v-79b2de20" => "", :href => listing_path(listing)}
                     .thumb{"data-v-79b2de20" => ""}
-                      %img{:alt => "都内で絶品テイクアウトバーガーを食べるならここ！", "data-v-79b2de20" => "", :src => "https://img.teriyaki.me/ambassador_images/1899/ambassador/32a1362ef4878d72e04097c383db15c6a05cbf1f1.jpg?1586412214"}/
+                      - if listing.image.attached?
+                        = image_tag url_for(listing.image)
+                      - else
+                        = image_tag asset_path("no_image.png")
                     .detail{"data-v-79b2de20" => ""}
                       %p.title{"data-v-79b2de20" => ""}
                         = listing.name

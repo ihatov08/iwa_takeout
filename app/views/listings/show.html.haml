@@ -1,12 +1,7 @@
 %section#article-detail.container{"data-v-b06099f8" => ""}
   #content.clearfix{"data-v-b06099f8" => ""}
     %main{"data-v-b06099f8" => ""}
-      #article{"data-v-b06099f8" => ""}
-        .inner{"data-v-b06099f8" => ""}
-          .main{"data-v-b06099f8" => ""}
       #store{"data-v-b06099f8" => ""}
-        /
-        /
         .info{"data-v-b06099f8" => ""}
           %h2{"data-v-b06099f8" => ""} 店舗情報
           %h3.store-name{"data-v-b06099f8" => ""}
@@ -31,6 +26,12 @@
               %dt{"data-v-b06099f8" => ""} 定休日
               %dd{"data-v-b06099f8" => ""}
                 = @listing.holiday_names
+      #article{"data-v-b06099f8" => ""}
+        .inner{"data-v-b06099f8" => ""}
+          .main{"data-v-b06099f8" => ""}
+            %a.store-icon{"data-v-b06099f8" => "", :href => ""}
+            .detail{"data-v-b06099f8" => ""}
+              = @listing.free_text
     %aside{"data-v-b06099f8" => ""}
       .info{"data-v-b06099f8" => ""}
         %h3.store-name{"data-v-b06099f8" => ""}

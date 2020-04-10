@@ -1,0 +1,56 @@
+ja:
+  activerecord:
+    models:
+      action_text/rich_text: アクションテキスト/リッチテキスト  #g
+      active_storage/attachment: アクティブストレージ/アタッチメント  #g
+      active_storage/blob: アクティブストレージ/ブロブ  #g
+      day_of_week: 曜日  #g
+      listing: 上場  #g
+      listing_holiday: 休日のリスト  #g
+
+    attributes:
+      action_text/rich_text:
+        body: 体  #g
+        embeds_attachments: 添付ファイルを埋め込む  #g
+        embeds_blobs: ブロブを埋め込む  #g
+        name: 名前  #g
+        record: :activerecord.models.record  #g
+        record_type: レコードタイプ  #g
+
+      active_storage/attachment:
+        blob: :activerecord.models.blob  #g
+        name: 名前  #g
+        record: :activerecord.models.record  #g
+        record_type: レコードタイプ  #g
+
+      active_storage/blob:
+        attachments: 付属品  #g
+        byte_size: バイトサイズ  #g
+        checksum: チェックサム  #g
+        content_type: コンテンツタイプ  #g
+        filename: ファイル名  #g
+        key: キー  #g
+        metadata: メタデータ  #g
+        preview_image_attachment: :activerecord.models.preview_image_attachment  #g
+        preview_image_blob: :activerecord.models.preview_image_blob  #g
+
+      day_of_week:
+        name: 名前  #g
+
+      listing:
+        address: 住所  #g
+        close_at: 閉店時間  #g
+        description: お店の説明  #g
+        holidays: 祝日  #g
+        free_text: 自由記入欄
+        listing_holidays: 休日のリスト  #g
+        name: 店舗名  #g
+        open_at: 開店時間  #g
+        postal_code: 郵便番号  #g
+        rich_text_free_text: :activerecord.models.rich_text_free_text  #g
+        tel: 電話  #g
+        image: 店舗画像
+
+      listing_holiday:
+        day_of_week: :activerecord.models.day_of_week  #g
+        listing: :activerecord.models.listing  #g
