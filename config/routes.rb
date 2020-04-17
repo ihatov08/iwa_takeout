@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :client_staffs, controllers: {
+    confirmations:      'client_staffs/confirmations',
+    passwords:          'client_staffs/passwords',
+    registrations:      'client_staffs/registrations',
+    sessions:           'client_staffs/sessions',
+    unlocks:            'client_staffs/unlocks'
+  }
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: "home#index"

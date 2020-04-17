@@ -1,0 +1,47 @@
+<%= render partial: "shared/errors", locals: {resource: resource} %>
+<div class="login bg-fixed pd-80" style="background-image: url(<%= asset_path 'login_bg.jpg' %>)">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 text-center">
+        <div class="login-wrapper">
+          <ul class="nav nav-tabs justify-content-center" role="tablist">
+            <li class="nav-item">
+              <%= link_to "ログイン", new_client_staff_session_path, class: "nav-link active" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "新規登録", new_client_staff_registration_path, class: "nav-link" %>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="register" role="tabpanel">
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-group">
+                  <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "Email" %>
+                </div>
+                <div class="form-group">
+                  <%= f.password_field :password, class: "form-control", autocomplete: "new-password", placeholder: "Password" %>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-12 text-left">
+                    <% if devise_mapping.rememberable? %>
+                      <div class="remember-wrap">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="login-btn text-center">
+                  <%= button_tag type: 'submit', class: 'btn p1' do %>
+                    <i class="fas fa-user-plus"></i><%= t('.sign_in') %>
+                  <% end %>
+                </div>
+              <% end %>
+              <%= render partial: "client_staffs/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
