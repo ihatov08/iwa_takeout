@@ -1,6 +1,5 @@
 Listing.seed do |s|
   s.id = 1
-  s.client_id = 1
   s.category_id = 1
   s.postal_code = "0000000"
   s.prefecture_id = 1

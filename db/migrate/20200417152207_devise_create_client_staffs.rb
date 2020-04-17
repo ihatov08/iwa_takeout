@@ -3,7 +3,6 @@
 class DeviseCreateClientStaffs < ActiveRecord::Migration[6.0]
   def change
     create_table :client_staffs do |t|
-      t.references :client, null: false, foreign_key: true
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

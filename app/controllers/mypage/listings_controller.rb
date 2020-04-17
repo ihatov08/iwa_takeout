@@ -3,26 +3,10 @@ class Mypage::ListingsController < ApplicationController
   before_action :set_listing, only: %i[show edit update destroy]
 
   def index
-    @listings = current_client_staff.client.listings
-  end
-
-  def new
-    @listing = current_client_staff.client.listings.build
+    @listings = current_client_staff.listings
   end
 
   def show
-    @listing = current_client_staff.client.listings.build
-  end
-
-  def create
-    @listing = current_client_staff.client.listings.build(listing_params)
-
-    if @listing.save
-      redirect_to @listing, notice: "リスティングの作成に成功しました"
-    else
-      flash.now[:alert] = "リスティングの作成に失敗しました"
-      render :new
-    end
   end
 
   def edit
@@ -65,6 +49,6 @@ class Mypage::ListingsController < ApplicationController
   end
 
   def set_listing
-    @listing = current_client_staff.client.listings.find(params[:id])
+    @listing = current_client_staff.listings.find(params[:id])
   end
 end

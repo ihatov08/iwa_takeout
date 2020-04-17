@@ -9,5 +9,6 @@ class ClientStaff < ApplicationRecord
          :timeoutable,
          :trackable
 
-  belongs_to :client
+  has_many :listing_staffs
+  has_many :listings, through: :listing_staffs
 end

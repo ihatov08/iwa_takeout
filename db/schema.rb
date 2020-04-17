@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_152207) do
+ActiveRecord::Schema.define(version: 2020_04_17_171811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2020_04_17_152207) do
   end
 
   create_table "client_staffs", force: :cascade do |t|
-    t.bigint "client_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -79,17 +78,10 @@ ActiveRecord::Schema.define(version: 2020_04_17_152207) do
     t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["client_id"], name: "index_client_staffs_on_client_id"
     t.index ["confirmation_token"], name: "index_client_staffs_on_confirmation_token", unique: true
     t.index ["email"], name: "index_client_staffs_on_email", unique: true
     t.index ["reset_password_token"], name: "index_client_staffs_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_client_staffs_on_unlock_token", unique: true
-  end
-
-  create_table "clients", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "foods", force: :cascade do |t|
@@ -102,8 +94,16 @@ ActiveRecord::Schema.define(version: 2020_04_17_152207) do
     t.index ["listing_id"], name: "index_foods_on_listing_id"
   end
 
+  create_table "listing_staffs", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.bigint "client_staff_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_staff_id"], name: "index_listing_staffs_on_client_staff_id"
+    t.index ["listing_id"], name: "index_listing_staffs_on_listing_id"
+  end
+
   create_table "listings", force: :cascade do |t|
-    t.bigint "client_id", null: false
     t.bigint "category_id", null: false
     t.string "postal_code", null: false
     t.bigint "prefecture_id", null: false
@@ -121,7 +121,6 @@ ActiveRecord::Schema.define(version: 2020_04_17_152207) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["city_id"], name: "index_listings_on_city_id"
-    t.index ["client_id"], name: "index_listings_on_client_id"
     t.index ["prefecture_id"], name: "index_listings_on_prefecture_id"
   end
 
@@ -135,10 +134,10 @@ ActiveRecord::Schema.define(version: 2020_04_17_152207) do
   end
 
   add_foreign_key "cities", "prefectures"
-  add_foreign_key "client_staffs", "clients"
   add_foreign_key "foods", "listings"
+  add_foreign_key "listing_staffs", "client_staffs"
+  add_foreign_key "listing_staffs", "listings"
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "cities"
-  add_foreign_key "listings", "clients"
   add_foreign_key "listings", "prefectures"
 end

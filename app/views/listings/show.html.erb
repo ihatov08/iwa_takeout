@@ -1,4 +1,4 @@
-<% if @listing.client == current_client_staff&.client %>
+<% if @listing.client_staffs.include?(current_client_staff) %>
   <div class="alert alert-warning">
     あなたのリスティングです
     <%= link_to "戻る", mypage_listings_path, class: "btn btn-warning" %>
