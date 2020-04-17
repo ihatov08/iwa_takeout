@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_17_181716) do
+ActiveRecord::Schema.define(version: 2020_04_17_182426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_181716) do
 
   create_table "listings", force: :cascade do |t|
     t.bigint "category_id", null: false
-    t.string "postal_code", null: false
+    t.string "postal_code"
     t.bigint "prefecture_id", null: false
     t.bigint "city_id", null: false
     t.string "address", null: false
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 2020_04_17_181716) do
     t.string "holidays"
     t.string "tel"
     t.string "website_url"
-    t.text "description", null: false
+    t.text "description"
     t.string "main_image"
     t.boolean "published", default: false, null: false
     t.datetime "created_at", precision: 6, null: false

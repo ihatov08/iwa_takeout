@@ -5,7 +5,7 @@ ja:
         postal_code: 郵便番号
         address: 住所
         title: 店名
-        description: 詳細
+        description: 備考
         price: 価格
         category_id: カテゴリ
         prefecture_id: 都道府県

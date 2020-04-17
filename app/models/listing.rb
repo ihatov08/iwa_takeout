@@ -4,10 +4,8 @@ class Listing < ApplicationRecord
   belongs_to :city
 
   with_options presence: true do
-    validates :postal_code
     validates :address
     validates :title
-    validates :description
   end
 
   mount_uploader :main_image, ImageUploader
