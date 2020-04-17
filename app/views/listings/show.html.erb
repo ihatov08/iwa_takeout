@@ -41,7 +41,7 @@
               <p><%= @listing.hours %></p>
               <h3>休日</h3>
               <p><%= @listing.holidays %></p>
-              <% if @listing.website_url %>
+              <% if @listing.website_url.presence %>
                 <h3>ウェブサイト</h3>
                 <p><%= link_to "ウェブサイトへ", @listing.website_url, class: "btn p1" %></p>
               <% end %>
@@ -60,6 +60,8 @@
           </div>
         </div>
       <% end %>
+
+      <iframe src="https://maps.google.co.jp/maps?output=embed&q=<%= @listing.full_address %>&z=16" width="600" height="400" frameborder="0" scrolling="no" ></iframe>
     </div>
   </div>
 </div>
