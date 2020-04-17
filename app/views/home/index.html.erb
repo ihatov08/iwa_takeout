@@ -35,10 +35,10 @@
 <div class="container">
   <div class="row pd-80">
     <div class="col-md-8 offset-md-2 text-center">
-      <!-- <h2 class="section-ttl">ピックアップ</h2> -->
+      <h2 class="section-ttl">お店一覧</h2>
     </div>
 
-    <% Listing.limit(3).each do |listing| %>
+    <% Listing.order(id: :desc).each do |listing| %>
       <div class="col-md-4">
         <div class="card">
           <%= link_to listing do %>
@@ -51,6 +51,34 @@
               </div>
               <div class="shop-location-wrapper">
                 <div class="shop-location"><i class="fas fa-map-marker-alt"></i><%= listing.full_address %></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row pd-80">
+    <div class="col-md-8 offset-md-2 text-center">
+      <h2 class="section-ttl">メニュー一覧</h2>
+    </div>
+
+    <% Food.order(id: :desc).each do |food| %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= link_to food.listing do %>
+          <div class="place-img">
+              <%= image_tag food.main_image.url, class: "listing-main-image" %>
+            </div>
+            <div class="card-bottom">
+              <div class="shop-name">
+                <%= food.name %>
+              </div>
+              <div class="shop-location-wrapper">
+                <div class="shop-location"><%= number_to_currency food.price %></div>
               </div>
             </div>
           <% end %>
