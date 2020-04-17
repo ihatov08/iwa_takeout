@@ -12,21 +12,6 @@
         </ul>
 
         <div class="my-2 my-lg-0">
-          <% if user_signed_in? %>
-          <div class="dd-header dropdown float-left">
-            <button type="button" class="btn dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.name %>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-              <%= link_to "リスティング一覧", mypage_listings_path, class: "dropdown-item" %>
-            </div>
-          </div>
-            <%= image_tag current_user.avatar.url, class: "rounded-circle", size: "50x50" %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn p1" %>
-          <% else %>
-            <%= link_to "ログイン", new_user_session_path, class: "btn p1" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "btn p1" %>
-          <% end %>
         </div>
       </div>
     </nav>
