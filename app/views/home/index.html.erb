@@ -33,7 +33,7 @@
       <h2 class="section-ttl">お店一覧</h2>
     </div>
 
-    <% Listing.order(id: :desc).each do |listing| %>
+    <% @q.result.each do |listing| %>
       <div class="col-md-4">
         <div class="card">
           <%= link_to listing do %>
@@ -61,7 +61,7 @@
       <h2 class="section-ttl">メニュー一覧</h2>
     </div>
 
-    <% Food.order(id: :desc).each do |food| %>
+    <% @foods.each do |food| %>
       <div class="col-md-4">
         <div class="card">
           <%= link_to food.listing do %>
