@@ -1,10 +1,10 @@
 .field_with_errors {
   input {
-    @extend .is-invalid;
+    @extend .is-invalid !optional;
   }
 
   textarea {
-    @extend .is-invalid;
+    @extend .is-invalid !optional;
   }
 }
 

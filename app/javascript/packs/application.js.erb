@@ -3,9 +3,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("bootstrap")
-require("@fortawesome/fontawesome-free")
 require("bootstrap-datepicker")
 
 window.$ = window.jQuery = require("jquery")
-
+import "../src/application.scss"
 import "<%= File.join(Gem.loaded_specs['cocoon'].full_gem_path, 'app', 'assets', 'javascripts', 'cocoon') %>"
