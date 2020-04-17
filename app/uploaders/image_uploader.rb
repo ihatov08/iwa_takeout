@@ -18,6 +18,14 @@ class ImageUploader < CarrierWave::Uploader::Base
     ActionController::Base.helpers.asset_path("no_image.png")
   end
 
+  def url(*args)
+    if cached?
+      "/#{cache_path}"
+    else
+      super
+    end
+  end
+
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
