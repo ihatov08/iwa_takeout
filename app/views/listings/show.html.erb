@@ -1,9 +1,3 @@
-<% if @listing.user_id == current_user&.id %>
-  <div class="alert alert-warning">
-    あなたのリスティングです
-    <%= link_to "戻る", mypage_listings_path, class: "btn btn-warning" %>
-  </div>
-<% end %>
 <%= render partial: "shared/errors", locals: {resource: @booking} %>
 <div class="listing-detail-header" style="background-image: url(<%= @listing.main_image.url %>)">
   <div class="overlay opc-3"></div>
@@ -26,7 +20,7 @@
 <div class="user-profile-main pd-80">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-12 col-md-12">
         <div class="user-profile-menu">
           <ul class="nav nav-tabs user-profile-tab" style="margin-bottom:20px;">
             <li class="nav-item"><a href="#overview" class="nav-link">概要</a></li>
@@ -67,41 +61,6 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12">
-        <div class="sidebar-widget">
-          <div class="mylist-widget ">
-            <div class="business-ttl">
-              <h3><i class="fas fa-book"></i> 予約</h3>
-            </div>
-            <hr>
-            <%= form_with local: true, id: "booking-form" do |f| %>
-              <div class="row calendar">
-                <div class="col-md-6 check-in">
-                  <div id="datepicker-from" class="input-group">
-                    <%= f.text_field :check_in, class: "form-control datepicker", placeholder: "チェックイン" %>
-                    <span><i class="far fa-calendar-alt"></i></span>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div id="datepicker-to" class="input-group">
-                    <%= f.text_field :check_out, class: "form-control datepicker", placeholder: "チェックアウト" %>
-                    <span><i class="far fa-calendar-alt"></i></span>
-                  </div>
-                </div>
-              </div>
-              <div class="request-btn text-center">
-                <%= f.submit "予約する", class: "btn btn-info" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-<script type="text/javascript">
-  $('.datepicker').datepicker({
-    format: 'yyyy/mm/dd',
-    startDate: "<%= l(Date.current.next_day) %>"
-  });
-</script>

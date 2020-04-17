@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
     t.index ["prefecture_id"], name: "index_cities_on_prefecture_id"
   end
 
+  create_table "clients", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "gallery_images", force: :cascade do |t|
     t.bigint "listing_id", null: false
     t.string "image", null: false
@@ -42,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "client_id", null: false
     t.bigint "category_id", null: false
     t.string "postal_code", null: false
     t.bigint "prefecture_id", null: false
@@ -57,8 +63,8 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["city_id"], name: "index_listings_on_city_id"
+    t.index ["client_id"], name: "index_listings_on_client_id"
     t.index ["prefecture_id"], name: "index_listings_on_prefecture_id"
-    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "prefectures", force: :cascade do |t|
@@ -105,6 +111,6 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
   add_foreign_key "gallery_images", "listings"
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "cities"
+  add_foreign_key "listings", "clients"
   add_foreign_key "listings", "prefectures"
-  add_foreign_key "listings", "users"
 end
