@@ -1,9 +1,23 @@
 class Mypage::ListingsController < ApplicationController
-  before_action :authenticate_client_staff!
   before_action :set_listing, only: %i[show edit update destroy]
 
   def index
     @listings = current_client_staff.listings
+  end
+
+  def new
+    @listing = Listing.new
+  end
+
+  def create
+    @listing = Listing.new(listing_params)
+
+    if @listing.save
+      redirect_to :root, notice: "お店情報提供ありがとうございました！"
+    else
+      flash.now[:alert] = "お店情報の保存に失敗しました"
+      render :new
+    end
   end
 
   def show
@@ -49,6 +63,6 @@ class Mypage::ListingsController < ApplicationController
   end
 
   def set_listing
-    @listing = current_client_staff.listings.find(params[:id])
+    @listing = Listing.find(params[:id])
   end
 end

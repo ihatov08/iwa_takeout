@@ -4,7 +4,7 @@ ja:
       listing:
         postal_code: 郵便番号
         address: 住所
-        title: タイトル
+        title: 店名
         description: 詳細
         price: 価格
         category_id: カテゴリ
