@@ -39,6 +39,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'cloudinary'
 gem 'activeadmin'
+gem 'high_voltage'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

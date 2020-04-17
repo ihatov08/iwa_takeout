@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg hamburger-menu">
       <%= link_to :root, class: "navbar-brand" do %>
-        <h1><%= image_tag 'logo.png' %></h1>
+        <h1>いわていくあうと</h1>
       <% end %>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー">
       <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
@@ -12,6 +12,10 @@
         </ul>
 
         <div class="my-2 my-lg-0">
+          <div class="dd-header dropdown float-left">
+            <%= link_to "【いわていくあうと】とは？", page_path('about'), class: "btn p1" %>
+            <%= link_to "お問い合わせ", "https://forms.gle/swa8kjGTCskRL2gv9", class: "btn p1" %>
+          </div>
         </div>
       </div>
     </nav>

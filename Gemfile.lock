@@ -123,6 +123,7 @@ GEM
       actionpack (>= 4.1)
       activesupport (>= 4.1)
     hashie (3.6.0)
+    high_voltage (3.1.2)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -338,6 +339,7 @@ DEPENDENCIES
   cocoon
   devise
   devise-i18n
+  high_voltage
   jbuilder (~> 2.7)
   kaminari
   letter_opener_web
