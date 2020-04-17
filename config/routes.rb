@@ -10,10 +10,6 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  namespace :mypage do
-    resources :listings
-  end
-
   resources :listings, only: %i[index show]
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
