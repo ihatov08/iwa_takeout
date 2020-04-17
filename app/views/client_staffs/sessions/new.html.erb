@@ -16,10 +16,10 @@
             <div class="tab-pane active" id="register" role="tabpanel">
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-group">
-                  <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "Email" %>
+                  <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
                 </div>
                 <div class="form-group">
-                  <%= f.password_field :password, class: "form-control", autocomplete: "new-password", placeholder: "Password" %>
+                  <%= f.password_field :password, class: "form-control", autocomplete: "new-password", placeholder: "パスワード" %>
                 </div>
                 <div class="row">
                   <div class="col-md-6 col-12 text-left">
