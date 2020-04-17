@@ -52,7 +52,7 @@
         </div>
       </div>
       <% @listing.foods.each do |food| %>
-        <div class="card" style="width: 18rem;">
+        <div class="card" id="gallery" style="width: 18rem;">
           <%= image_tag food.main_image.url, class: "card-img-top" %>
           <div class="card-body">
             <h5 class="card-title"><%= food.name %></h5>
