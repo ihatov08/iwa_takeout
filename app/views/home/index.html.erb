@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h2>宿泊や体験を予約しましょう</h2>
+        <h2>テイクアウトできる飲食店を探しましょう</h2>
       </div>
       <div class="col-md-12 text-center mt-30">
         <%= search_form_for @q, url: listings_path, class: "mv-form bg-white" do |f| %>
@@ -21,7 +21,7 @@
             <div class="col-lg-3 col-md-12">
               <div class="submit_btn text-right md-left">
                 <%= button_tag type: 'submit', class: "btn p1" do %>
-                  <i class="fas fa-search"></i> Search
+                  <i class="fas fa-search"></i> 検索
                 <% end %>
               </div>
             </div>
@@ -35,7 +35,7 @@
 <div class="container">
   <div class="row pd-80">
     <div class="col-md-8 offset-md-2 text-center">
-      <h2 class="section-ttl">ピックアップ</h2>
+      <!-- <h2 class="section-ttl">ピックアップ</h2> -->
     </div>
 
     <% Listing.limit(3).each do |listing| %>
