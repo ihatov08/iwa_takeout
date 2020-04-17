@@ -4,13 +4,7 @@
       <div class="form-group">
         <%= f.label :title %>
         <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= f.label :category_id %>
-        <%= f.collection_select :category_id, Category.all, :id, :name, {}, class: "form-control custom-select" %>
+        <%= f.hidden_field :category_id, value: 1 %>
       </div>
     </div>
 
@@ -42,13 +36,6 @@
     </div>
   </div>
 
-  <div class="col-md-6">
-    <div class="form-group">
-      <%= f.label :price %>
-      <%= f.number_field :price, class: "form-control", placeholder: 5000 %>
-    </div>
-  </div>
-
   <div class="col-md-12">
     <div class="form-group">
       <%= f.label :description %>
@@ -67,30 +54,14 @@
     </div>
   </div>
 
-  <div id="gallery_images">
-    <%= f.fields_for :gallery_images do |image| %>
-      <%= render "gallery_image_fields", f: image %>
+  <div id="foods">
+    <%= f.fields_for :foods do |image| %>
+      <%= render "food_fields", f: image %>
     <% end %>
     <div class="col-md-12">
       <div class="form-group">
         <div class="links">
-          <%= link_to_add_association '画像を追加', f, :gallery_images, class: "btn btn-primary" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-12">
-    <div class="form-group">
-      <%= f.label :published %>
-      <div class="checkbox-wrapper">
-        <div class="accept custom-checkbox custom-control-inline">
-          <%= f.radio_button :published, true %>
-          公開
-        </div>
-        <div class="accept custom-checkbox custom-control-inline">
-          <%= f.radio_button :published, false %>
-          非公開
+          <%= link_to_add_association 'メニューを追加', f, :foods, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

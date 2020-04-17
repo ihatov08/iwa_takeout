@@ -14,7 +14,7 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.string :website_url
       t.text :description, null: false
       t.string :main_image
-      t.boolean :published, null: false, default: false
+      t.boolean :published, null: false, default: true
 
       t.timestamps
     end

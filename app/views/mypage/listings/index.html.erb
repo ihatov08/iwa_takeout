@@ -10,7 +10,6 @@
         <tr>
           <th scope="col">タイトル</th>
           <th scope="col">説明</th>
-          <th scope="col">価格</th>
           <th scope="col">操作</th>
         </tr>
       </thead>
@@ -20,10 +19,9 @@
           <tr>
             <td><%= listing.title %></td>
             <td><%= listing.description.truncate(100) %></td>
-            <td><%= listing.price %></td>
             <td>
               <div class="btn-group" role="group" aria-label="Third group">
-                <%= link_to "詳細", [:mypage, listing], class: "btn btn-primary" %>
+                <%= link_to "詳細", listing, class: "btn btn-primary" %>
                 <%= link_to "編集", [:edit, :mypage, listing], class: "btn btn-success" %>
                 <%= link_to "削除", [:mypage, listing], method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger" %>
               </div>

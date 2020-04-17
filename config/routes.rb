@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   resources :listings, only: %i[index show]
   resources :foods, only: %i[index show]
 
+  namespace :mypage do
+    resources :listings
+  end
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

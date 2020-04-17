@@ -1,3 +1,10 @@
+<% if @listing.client == current_client_staff&.client %>
+  <div class="alert alert-warning">
+    あなたのリスティングです
+    <%= link_to "戻る", mypage_listings_path, class: "btn btn-warning" %>
+  </div>
+<% end %>
+
 <%= render partial: "shared/errors", locals: {resource: @booking} %>
 <div class="listing-detail-header" style="background-image: url(<%= @listing.main_image.url %>)">
   <div class="overlay opc-3"></div>

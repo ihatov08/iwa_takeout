@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      food:
+        main_image: 画像
+        name: 名前
+        price: 価格

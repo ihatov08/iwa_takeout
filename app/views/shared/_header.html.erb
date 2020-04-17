@@ -14,6 +14,8 @@
         <div class="my-2 my-lg-0">
           <div class="dd-header dropdown float-left">
             <% if client_staff_signed_in? %>
+              <%= link_to "リスティング一覧", mypage_listings_path, class: "btn p1" %>
+              <%= link_to "リスティング登録", new_mypage_listing_path, class: "btn p1" %>
               <%= link_to "ログアウト", destroy_client_staff_session_path, method: :delete, class: "btn p1" %>
             <% else %>
               <%= link_to "【いわていくあうと】とは？", page_path('about'), class: "btn p1" %>
