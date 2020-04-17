@@ -23,43 +23,36 @@
         <div class="user-profile-menu">
           <ul class="nav nav-tabs user-profile-tab" style="margin-bottom:20px;">
             <li class="nav-item"><a href="#overview" class="nav-link">概要</a></li>
-            <li class="nav-item"><a href="#gallery" class="nav-link">ギャラリー</a></li>
+            <li class="nav-item"><a href="#gallery" class="nav-link">メニュー</a></li>
           </ul>
         </div>
         <div id="overview">
           <div class="overview-top">
-            <h3>概要</h3>
+            <h3>電話番号</h3>
+              <p><%= @listing.tel %></p>
+              <h3>開店時間</h3>
+              <p><%= @listing.hours %></p>
+              <h3>休日</h3>
+              <p><%= @listing.holidays %></p>
+              <% if @listing.website_url %>
+                <h3>ウェブサイト</h3>
+                <p><%= link_to @listing.website_url %></p>
+              <% end %>
+              <h3>概要</h3>
               <%= simple_format @listing.description %>
-          </div>
-        </div>
-        <div id="gallery" class="pd-top-80">
-          <h3>ギャラリー</h3>
-          <div class="carousel-wrapper carousel-gallery">
-            <div id="carouselOption3" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <% @listing.gallery_images.each_with_index() do |_, i| %>
-                  <li data-target="#carouselOption3" data-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : '' %>"></li>
-                <% end %>
-              </ol>
-              <div class="carousel-inner">
-                <% @listing.gallery_images.each_with_index do |image, i| %>
-                  <div class="carousel-item <%= i == 0 ? 'active' : '' %>">
-                    <%= image_tag image.image.url, class: "d-block w-100" %>
-                  </div>
-                <% end %>
-              </div>
-              <a class="carousel-control-prev" href="#carouselOption3" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">前へ</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselOption3" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">次へ</span>
-              </a>
-            </div>
+              <h3>メニュー一覧</h3>
           </div>
         </div>
       </div>
+      <% @listing.foods.each do |food| %>
+        <div class="card" style="width: 18rem;">
+          <%= image_tag food.main_image.url, class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= food.name %></h5>
+            <p class="card-text"><%= number_to_currency food.price %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

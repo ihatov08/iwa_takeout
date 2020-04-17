@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_065121) do
+ActiveRecord::Schema.define(version: 2020_04_17_140817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "foods", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.string "main_image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_foods_on_listing_id"
+  end
+
   create_table "gallery_images", force: :cascade do |t|
     t.bigint "listing_id", null: false
     t.string "image", null: false
@@ -55,9 +65,12 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
     t.bigint "city_id", null: false
     t.string "address", null: false
     t.string "title", null: false
+    t.string "hours"
+    t.string "holidays"
+    t.string "tel"
+    t.string "website_url"
     t.text "description", null: false
     t.string "main_image"
-    t.integer "price", null: false
     t.boolean "published", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -77,6 +90,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_065121) do
   end
 
   add_foreign_key "cities", "prefectures"
+  add_foreign_key "foods", "listings"
   add_foreign_key "gallery_images", "listings"
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "cities"

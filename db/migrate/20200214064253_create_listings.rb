@@ -8,9 +8,12 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.references :city, null: false, foreign_key: true
       t.string :address, null: false
       t.string :title, null: false
+      t.string :hours
+      t.string :holidays
+      t.string :tel
+      t.string :website_url
       t.text :description, null: false
       t.string :main_image
-      t.integer :price, null: false
       t.boolean :published, null: false, default: false
 
       t.timestamps

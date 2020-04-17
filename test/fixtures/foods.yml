@@ -2,10 +2,10 @@
 
 one:
   listing: one
-  image: MyString
-  order: 1
+  name: MyString
+  price: 1
 
 two:
   listing: two
-  image: MyString
-  order: 1
+  name: MyString
+  price: 1

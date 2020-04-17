@@ -9,8 +9,11 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
+  s.hours = "10:00~11:00"
+  s.holidays = "月,火"
+  s.tel = "090-4479-6718"
+  s.website_url = "https://morioka-kiriya-saien.owst.jp/"
 end
 
 Listing.seed do |s|
@@ -24,7 +27,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -39,7 +41,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -54,7 +55,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -69,7 +69,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -84,7 +83,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -99,7 +97,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -114,7 +111,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -129,7 +125,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -144,7 +139,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -159,7 +153,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -174,7 +167,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -189,7 +181,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -204,7 +195,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -219,7 +209,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -234,7 +223,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -249,7 +237,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -264,7 +251,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -279,7 +265,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -294,7 +279,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -309,7 +293,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -324,7 +307,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -339,7 +321,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -354,7 +335,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -369,7 +349,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -384,7 +363,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -399,7 +377,6 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
 
@@ -414,6 +391,5 @@ Listing.seed do |s|
   s.title = "サンプルリスティング"
   s.description = "駅前でアクセスバツグンです"
   s.main_image = Rails.root.join("db", "fixtures", "images", "listing_main_image.jpg").open
-  s.price = "5000"
   s.published = true
 end
