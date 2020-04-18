@@ -50,6 +50,9 @@
               <div class="shop-location-wrapper">
                 <div class="shop-location"><i class="fas fa-phone"></i><%= listing.tel %></div>
               </div>
+              <div class="shop-location-wrapper">
+                <%= link_to "編集する", edit_mypage_listing_path(listing), class: "btn p1" %>
+              </div>
             </div>
           <% end %>
         </div>
