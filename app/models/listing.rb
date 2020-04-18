@@ -16,6 +16,8 @@ class Listing < ApplicationRecord
   has_many :foods, dependent: :destroy
   accepts_nested_attributes_for :foods, allow_destroy: true
 
+  has_rich_text :content
+
   scope :published, -> { where(published: true) }
 
   def full_address
