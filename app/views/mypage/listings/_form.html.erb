@@ -36,6 +36,34 @@
     </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :tel %>
+      <%= f.text_field :tel, class: "form-control", placeholder: "019-111-1111" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :hours %>
+      <%= f.text_field :hours, class: "form-control", placeholder: "9:00~21:00" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :holidays %>
+      <%= f.text_field :holidays, class: "form-control", placeholder: "月曜日" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :website_url %>
+      <%= f.text_field :website_url, class: "form-control", placeholder: "https://www.iwate-takeout.com/" %>
+    </div>
+  </div>
+
   <div class="col-md-12">
     <div class="form-group">
       <%= f.label :content %>

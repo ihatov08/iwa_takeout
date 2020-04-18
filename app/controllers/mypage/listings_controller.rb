@@ -58,6 +58,7 @@ class Mypage::ListingsController < ApplicationController
       :main_image,
       :main_image_cache,
       :published,
+      :content,
       foods_attributes: %i[main_image_cache id name main_image price _destroy]
     )
   end
