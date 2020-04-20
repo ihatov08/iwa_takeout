@@ -10,3 +10,12 @@ https://www.google.com/maps/d/viewer?mid=1Pfsh7GdVYWGd557f-xB7o9HnHwGNLTWK&ll=39
 https://www.google.com/maps/d/viewer?mid=1jSFrprSVLt4eALEZLJCpkO9EMCSpWJfP&ll=39.64159848349404%2C141.94872687460565&z=16
 大船渡
 https://www.google.com/maps/d/viewer?mid=1JMSDh79INPZGaxfRVie0M1YMM4bth3-E&ll=39.062443331909535%2C141.72051310000006&z=17
+
+## template
+
+https://www.iwate-takeout.com
+岩手でテイクアウトができる飲食店まとめサイト
+「いわていくあうと」
+花巻のテイクアウト、３７店舗情報追加しました！
+
+#いわていくあうと #takeoutIwate #岩手 #TakeOutIwate
