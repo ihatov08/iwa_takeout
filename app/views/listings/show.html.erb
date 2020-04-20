@@ -88,6 +88,8 @@
               <%= @listing.description %>
               <h3>自由欄</h3>
               <%= @listing.content %>
+              <h3>編集する</h3>
+              <%= link_to "編集する", edit_mypage_listing_path(@listing), class: "btn p1" %>
           </div>
         </div>
       </div>
