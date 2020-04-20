@@ -3,7 +3,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h2>テイクアウトできる飲食店を探しましょう(掲載費無料です！)</h2>
+        <h2>テイクアウトできる飲食店を探しましょう</h2>
+        <h2>掲載費無料！</h2>
+        <h2>掲載件数: <%= Listing.published.count %>件</h2>
       </div>
       <div class="col-md-12 text-center mt-30">
         <%= search_form_for @q, url: listings_path, class: "mv-form bg-white" do |f| %>
