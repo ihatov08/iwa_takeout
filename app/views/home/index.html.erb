@@ -33,7 +33,7 @@
       <h2 class="section-ttl">お店一覧</h2>
     </div>
 
-    <% @q.result.each do |listing| %>
+    <% @listings.each do |listing| %>
       <div class="col-md-4">
         <div class="card">
           <%= link_to listing do %>
@@ -58,6 +58,7 @@
       </div>
     <% end %>
   </div>
+  <%= paginate @listings %>
 </div>
 
 <div class="container">
