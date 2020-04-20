@@ -21,7 +21,7 @@ module CsvImport
     end
 
     def city_regexp
-      /(?<=県).+市/
+      /(?<=県).+?[市区町村]/
     end
 
     def match_city

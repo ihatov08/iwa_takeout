@@ -26,4 +26,8 @@ class Listing < ApplicationRecord
   def full_address
     "#{prefecture.name} #{city.name} #{address}"
   end
+
+  def self.engan_exclude
+    %w(大槌 釜石 大船渡 陸前高田 山田)
+  end
 end
