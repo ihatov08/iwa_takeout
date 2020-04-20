@@ -63,7 +63,7 @@
 <div class="container">
   <div class="row pd-80">
     <div class="col-md-8 offset-md-2 text-center">
-      <h2 class="section-ttl">メニュー一覧</h2>
+      <h2 class="section-ttl">商品一覧</h2>
     </div>
 
     <% @foods.each do |food| %>
@@ -81,6 +81,26 @@
                 <div class="shop-location"><%= number_to_currency food.price %></div>
               </div>
             </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row pd-80">
+    <div class="col-md-8 offset-md-2 text-center">
+      <h2 class="section-ttl">メニュー表一覧</h2>
+    </div>
+
+    <% @menus.each do |menu| %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= link_to menu.listing do %>
+          <div class="place-img">
+            <%= image_tag menu.image.url, class: "listing-main-image" %>
+          </div>
           <% end %>
         </div>
       </div>

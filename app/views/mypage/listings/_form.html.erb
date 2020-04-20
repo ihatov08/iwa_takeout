@@ -71,6 +71,19 @@
     </div>
   </div>
 
+  <div id="menus">
+    <%= f.fields_for :foods do |image| %>
+      <%= render "menu_fields", f: image %>
+    <% end %>
+    <div class="col-md-12">
+      <div class="form-group">
+        <div class="links">
+          <%= link_to_add_association 'メニュー表を追加', f, :menus, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="col-md-12">
     <div class="form-group">
       <%= f.label :main_image %>
@@ -89,7 +102,7 @@
     <div class="col-md-12">
       <div class="form-group">
         <div class="links">
-          <%= link_to_add_association 'メニューを追加', f, :foods, class: "btn btn-primary" %>
+          <%= link_to_add_association '商品を追加', f, :foods, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

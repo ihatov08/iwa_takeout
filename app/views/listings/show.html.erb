@@ -79,7 +79,6 @@
               <%= @listing.description %>
               <h3>自由欄</h3>
               <%= @listing.content %>
-              <h3>メニュー一覧</h3>
           </div>
         </div>
       </div>
@@ -90,6 +89,11 @@
             <h5 class="card-title"><%= food.name %></h5>
             <p class="card-text"><%= number_to_currency food.price %></p>
           </div>
+        </div>
+      <% end %>
+      <% @listing.menus.each do |menu| %>
+        <div class="card" id="gallery" style="width: 18rem;">
+          <%= image_tag menu.image.url, class: "card-img-top" %>
         </div>
       <% end %>
       <iframe src="https://maps.google.co.jp/maps?output=embed&q=<%= @listing.title %>&z=16" width="600" height="400" frameborder="0" scrolling="no" ></iframe>
