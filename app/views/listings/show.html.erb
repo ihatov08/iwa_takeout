@@ -75,6 +75,15 @@
                   <% end %>
                 </p>
               <% end %>
+
+              <% if @listing.google_map_url.presence %>
+                <h3>googleマップ</h3>
+                <p>
+                  <%= link_to @listing.google_map_url, class: "btn p1", target: :_blank do %>
+                    Googleマップで見る <i class="fas fa-external-link-alt"></i>
+                  <% end %>
+                </p>
+              <% end %>
               <h3>備考</h3>
               <%= @listing.description %>
               <h3>自由欄</h3>
