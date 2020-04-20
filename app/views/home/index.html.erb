@@ -44,12 +44,14 @@
             <div class="shop-location-wrapper">
               <div class="shop-location"><i class="fas fa-map-marker-alt"></i><%= listing.full_address %></div>
             </div>
-            <div class="shop-location-wrapper">
-              <div class="shop-location"><i class="fas fa-phone"></i><%= listing.tel %></div>
-            </div>
-            <div class="shop-location-wrapper">
+            <% if listing.tel %>
+              <div class="shop-location-wrapper">
+                <div class="shop-location"><i class="fas fa-phone"></i><%= listing.tel %></div>
+              </div>
+            <% end %>
+            <!-- <div class="shop-location-wrapper">
               <%= link_to "編集する", edit_mypage_listing_path(listing), class: "btn p1" %>
-            </div>
+            </div> -->
           </div>
           <% end %>
         </div>
