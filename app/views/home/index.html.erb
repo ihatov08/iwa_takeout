@@ -37,23 +37,20 @@
       <div class="col-md-4">
         <div class="card">
           <%= link_to listing do %>
-          <div class="place-img">
-              <%= image_tag listing.main_image.url, class: "listing-main-image" %>
+          <div class="card-bottom">
+            <div class="shop-name">
+              <%= listing.title %>
             </div>
-            <div class="card-bottom">
-              <div class="shop-name">
-                <%= listing.title %>
-              </div>
-              <div class="shop-location-wrapper">
-                <div class="shop-location"><i class="fas fa-map-marker-alt"></i><%= listing.full_address %></div>
-              </div>
-              <div class="shop-location-wrapper">
-                <div class="shop-location"><i class="fas fa-phone"></i><%= listing.tel %></div>
-              </div>
-              <div class="shop-location-wrapper">
-                <%= link_to "編集する", edit_mypage_listing_path(listing), class: "btn p1" %>
-              </div>
+            <div class="shop-location-wrapper">
+              <div class="shop-location"><i class="fas fa-map-marker-alt"></i><%= listing.full_address %></div>
             </div>
+            <div class="shop-location-wrapper">
+              <div class="shop-location"><i class="fas fa-phone"></i><%= listing.tel %></div>
+            </div>
+            <div class="shop-location-wrapper">
+              <%= link_to "編集する", edit_mypage_listing_path(listing), class: "btn p1" %>
+            </div>
+          </div>
           <% end %>
         </div>
       </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_045854) do
+ActiveRecord::Schema.define(version: 2020_04_20_044951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 2020_04_18_045854) do
     t.boolean "published", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "google_map_url"
     t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["city_id"], name: "index_listings_on_city_id"
     t.index ["prefecture_id"], name: "index_listings_on_prefecture_id"
