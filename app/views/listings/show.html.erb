@@ -42,7 +42,9 @@
             <h3>住所</h3>
             <p><%= @listing.full_address %></p>
             <h3>電話番号</h3>
-              <p><%= @listing.tel %></p>
+              <% if @listing.tel.present? %>
+                <%= link_to "#{@listing.tel}に電話する", "tel:#{@listing.tel.delete('-')}", class: "btn p1" %>
+              <% end %>
               <h3>開店時間</h3>
               <p><%= @listing.hours %></p>
               <h3>休日</h3>

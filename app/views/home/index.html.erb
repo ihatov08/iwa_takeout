@@ -53,7 +53,11 @@
             </div>
             <% if listing.tel %>
               <div class="shop-location-wrapper">
-                <div class="shop-location"><i class="fas fa-phone"></i><%= listing.tel %></div>
+                <div class="shop-location">
+                  <%= link_to  "tel:#{listing.tel.delete('-')}" do %>
+                    <i class="fas fa-phone"></i><%= listing.tel %>
+                  <% end %>
+                </div>
               </div>
             <% end %>
             <div class="shop-location-wrapper">
