@@ -76,7 +76,10 @@
             </div>
             <div class="card-bottom">
               <div class="shop-name">
-                <%= food.name %>
+                <%= food.listing.title %>
+              </div>
+              <div class="shop-location-wrapper">
+                <div class="shop-location"><%= food.name %></div>
               </div>
               <div class="shop-location-wrapper">
                 <div class="shop-location"><%= number_to_currency food.price %></div>
@@ -99,9 +102,9 @@
       <div class="col-md-4">
         <div class="card">
           <%= link_to menu.listing do %>
-          <div class="place-img">
-            <%= image_tag menu.image.url, class: "listing-main-image" %>
-          </div>
+            <div class="place-img">
+              <%= image_tag menu.image.url, class: "listing-main-image" %>
+            </div>
           <% end %>
         </div>
       </div>
