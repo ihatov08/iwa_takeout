@@ -8,3 +8,5 @@ https://www.google.com/maps/d/edit?mid=1Pfsh7GdVYWGd557f-xB7o9HnHwGNLTWK&ll=39.1
 https://www.google.com/maps/d/viewer?mid=1Pfsh7GdVYWGd557f-xB7o9HnHwGNLTWK&ll=39.17477919119192%2C141.66597541796875&z=10
 宮古
 https://www.google.com/maps/d/viewer?mid=1jSFrprSVLt4eALEZLJCpkO9EMCSpWJfP&ll=39.64159848349404%2C141.94872687460565&z=16
+大船渡
+https://www.google.com/maps/d/viewer?mid=1JMSDh79INPZGaxfRVie0M1YMM4bth3-E&ll=39.062443331909535%2C141.72051310000006&z=17
