@@ -6,7 +6,7 @@
 <% end %>
 
 <%= render partial: "shared/errors", locals: {resource: @booking} %>
-<% if false %>
+<% if @listing.main_image? %>
 <div class="listing-detail-header" style="background-image: url(<%= @listing.main_image.url %>)">
   <div class="overlay opc-3"></div>
   <div class="container">

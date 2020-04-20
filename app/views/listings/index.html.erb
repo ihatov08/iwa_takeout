@@ -38,9 +38,11 @@
             <div class="col-lg-6 col-md-12 col-12">
               <div class="card">
                 <%= link_to listing do %>
-                <!-- <div class="place-img">
-                  <%= image_tag listing.main_image.url, class: "listing-main-image" %>
-                </div> -->
+                  <% if listing.main_image? %>
+                    <div class="place-img">
+                      <%= image_tag listing.main_image.url, class: "listing-main-image" %>
+                    </div>
+                  <% end %>
                 <div class="card-bottom">
                   <div class="shop-name">
                     <%= listing.title %>
