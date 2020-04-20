@@ -49,9 +49,35 @@
               <p><%= @listing.holidays %></p>
               <% if @listing.website_url.presence %>
                 <h3>ウェブサイト</h3>
-                <p><%= link_to "ウェブサイトへ", @listing.website_url, class: "btn p1" %></p>
+                <p><%= link_to "ウェブサイトへ", @listing.website_url, class: "btn p1", target: :_blank %></p>
               <% end %>
-              <h3>概要</h3>
+              <% if @listing.twitter_id.presence %>
+                <h3>Twitter</h3>
+                <p>
+                  <%= link_to "https://twitter.com/#{@listing.twitter_id}", class: "btn p1", target: :_blank do %>
+                    twitter <i class="fas fa-external-link-alt"></i>
+                  <% end%>
+                </p>
+              <% end %>
+              <% if @listing.instagram_id.presence %>
+                <h3>Instagram</h3>
+                <p>
+                  <%= link_to "https://www.instagram.com/#{@listing.instagram_id}", class: "btn p1", target: :_blank do %>
+                    instagram <i class="fas fa-external-link-alt"></i>
+                  <% end %>
+                </p>
+              <% end %>
+              <% if @listing.facebook_id.presence %>
+                <h3>Facebook</h3>
+                <p>
+                  <%= link_to "https://www.facebook.com/#{@listing.instagram_id}", class: "btn p1", target: :_blank do %>
+                    facebook <i class="fas fa-external-link-alt"></i>
+                  <% end %>
+                </p>
+              <% end %>
+              <h3>備考</h3>
+              <%= @listing.description %>
+              <h3>自由欄</h3>
               <%= @listing.content %>
               <h3>メニュー一覧</h3>
           </div>

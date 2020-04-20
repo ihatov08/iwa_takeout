@@ -20,7 +20,7 @@
         <%= search_form_for @q do |f| %>
           <div class="form-group">
             <label class="pb-30" for="list-title">リスティング検索</label>
-            <%= f.collection_select :city_id_eq, City.all, :id, :name, {}, class: "form-control custom-select" %>
+            <%= f.collection_select :city_id_eq, City.joins(:listings).distinct, :id, :name, {}, class: "form-control custom-select" %>
           </div>
           <div class="apply-btn">
             <%= f.submit "検索する", class: "btn p1" %>
@@ -37,9 +37,9 @@
             <div class="col-lg-6 col-md-12 col-12">
               <div class="card">
                 <%= link_to listing do %>
-                <div class="place-img">
+                <!-- <div class="place-img">
                   <%= image_tag listing.main_image.url, class: "listing-main-image" %>
-                </div>
+                </div> -->
                 <div class="card-bottom">
                   <div class="shop-name">
                     <%= listing.title %>
@@ -47,6 +47,11 @@
                   <div class="shop-location-wrapper">
                     <div class="shop-location"><i class="fas fa-map-marker-alt"></i><%= listing.full_address %></div>
                   </div>
+                  <% if listing.tel %>
+                    <div class="shop-location-wrapper">
+                      <div class="shop-location"><i class="fas fa-phone"></i><%= listing.tel %></div>
+                    </div>
+                  <% end %>
                 </div>
                 <% end %>
               </div>
