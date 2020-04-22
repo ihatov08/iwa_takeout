@@ -10,6 +10,8 @@ https://www.google.com/maps/d/viewer?mid=1Pfsh7GdVYWGd557f-xB7o9HnHwGNLTWK&ll=39
 https://www.google.com/maps/d/viewer?mid=1jSFrprSVLt4eALEZLJCpkO9EMCSpWJfP&ll=39.64159848349404%2C141.94872687460565&z=16
 大船渡
 https://www.google.com/maps/d/viewer?mid=1JMSDh79INPZGaxfRVie0M1YMM4bth3-E&ll=39.062443331909535%2C141.72051310000006&z=17
+紫波矢巾
+https://www.google.com/maps/d/u/0/viewer?mid=188u91xWrzFN68HqisSxkDH4rbFxskK7b&ll=39.5679129%2C141.10829650000005&z=19
 
 ## template
 

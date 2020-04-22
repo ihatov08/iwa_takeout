@@ -30,4 +30,13 @@ class Listing < ApplicationRecord
   def self.engan_exclude
     %w(大槌 釜石 大船渡 陸前高田 山田)
   end
+
+  def images_from_website
+    return nil unless website_url
+    Rails.logger.info website_url
+    html = URI.open(website_url){|f| f.read }
+    doc = Nokogiri::HTML.parse(html)
+
+    doc.search("img").map{|img| img["src"]}
+  end
 end
