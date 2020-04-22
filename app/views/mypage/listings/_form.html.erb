@@ -72,8 +72,8 @@
   </div>
 
   <div id="menus">
-    <%= f.fields_for :menus do |image| %>
-      <%= render "menu_fields", f: image %>
+    <%= f.fields_for :menus do |menu| %>
+      <%= render "menu_fields", f: menu %>
     <% end %>
     <div class="col-md-12">
       <div class="form-group">
@@ -96,8 +96,8 @@
   </div>
 
   <div id="foods">
-    <%= f.fields_for :foods do |image| %>
-      <%= render "food_fields", f: image %>
+    <%= f.fields_for :foods do |food| %>
+      <%= render "food_fields", f: food %>
     <% end %>
     <div class="col-md-12">
       <div class="form-group">
