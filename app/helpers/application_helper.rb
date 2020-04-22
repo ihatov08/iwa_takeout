@@ -10,7 +10,7 @@ module ApplicationHelper
         type:     'website',
         description: '岩手県でテイクアウトができる飲食店まとめサイトです。',
         url:      'https://www.iwate-takeout.com/',
-        image:    image_url("iwate.jpg")
+        image:    image_url("iwate2.jpg")
       }
     }
   end
