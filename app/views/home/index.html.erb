@@ -36,7 +36,7 @@
     </div>
 
     <% @listings.each do |listing| %>
-      <div class="col-md-4">
+      <div class="d-flex col-md-4">
         <div class="card">
           <%= link_to listing do %>
             <% if listing.main_image? %>
