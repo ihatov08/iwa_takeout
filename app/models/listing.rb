@@ -38,6 +38,7 @@
 #  fk_rails_...  (prefecture_id => prefectures.id)
 #
 class Listing < ApplicationRecord
+  paginates_per 24
   belongs_to :category
   belongs_to :prefecture
   belongs_to :city
