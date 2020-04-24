@@ -89,6 +89,14 @@ class Listing < ApplicationRecord
     define_method("#{sns}_url=") do |val|
       self["#{sns}_id"] = File.basename(val) rescue nil
     end
+
+    define_method("#{sns}_url") do
+      if self["#{sns}_id"].present?
+        "https://www.#{sns}.com/#{send("#{sns}_id")}"
+      else
+        nil
+      end
+    end
   end
 
   def images_from_website
