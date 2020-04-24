@@ -86,6 +86,15 @@
                   <% end %>
                 </p>
               <% end %>
+
+              <% if @listing.tabelog_url? %>
+                <h3>食べログ</h3>
+                <p>
+                  <%= link_to @listing.tabelog_url, class: "btn p1", target: :_blank do %>
+                    食べログで見る <i class="fas fa-external-link-alt"></i>
+                  <% end %>
+                </p>
+              <% end %>
               <h3>備考</h3>
               <%= @listing.description %>
               <h3>自由欄</h3>

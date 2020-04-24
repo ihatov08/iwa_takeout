@@ -12,6 +12,7 @@
 #  main_image     :string
 #  postal_code    :string
 #  published      :boolean          default(FALSE), not null
+#  tabelog_url    :string
 #  tel            :string
 #  title          :string           not null
 #  website_url    :string
