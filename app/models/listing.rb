@@ -65,6 +65,10 @@ class Listing < ApplicationRecord
     "#{prefecture.name} #{city.name} #{address}"
   end
 
+  def image_url_or_main_image?
+    image_url? || main_image?
+  end
+
   def image_url_or_main_image
     if image_url?
       image_url
