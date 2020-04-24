@@ -12,7 +12,7 @@
           <div class="row">
             <div class="col-lg-8 col-md-12">
               <div class="mv-form-row border-bottom">
-                <%= f.collection_select :city_id_eq, City.joins(:listings).distinct.order(:id), :id, :name, {}, class: "mv-input custom-select" %>
+                <%= f.collection_select :city_id_eq, City.joins(:listings).distinct.order(:id), :id, :name, { include_blank: "市町村を選択してください" }, class: "mv-input custom-select" %>
               </div>
             </div>
             <div class="col-lg-3 col-md-12">
