@@ -14,3 +14,4 @@ ja:
         main_image: メイン画像
         published: 公開設定
         remove_main_image: メイン画像を削除する
+        image_url: 画像URL

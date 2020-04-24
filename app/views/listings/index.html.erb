@@ -40,7 +40,7 @@
                 <%= link_to listing do %>
                   <% if listing.main_image? %>
                     <div class="place-img">
-                      <%= image_tag listing.main_image.url, class: "listing-main-image" %>
+                      <%= image_tag listing.image_url_or_main_image, class: "listing-main-image" %>
                     </div>
                   <% end %>
                 <div class="card-bottom">

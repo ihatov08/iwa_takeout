@@ -84,6 +84,18 @@
     </div>
   </div>
 
+  <% if session[:enable_image_url] %>
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.label :image_url %>
+        <% if listing.image_url %>
+          <%= image_tag listing.image_url %>
+        <% end %>
+        <%= f.text_field :image_url, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+
   <div class="col-md-12">
     <div class="form-group">
       <%= f.label :main_image %>
