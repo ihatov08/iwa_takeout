@@ -15,3 +15,9 @@ ja:
         published: 公開設定
         remove_main_image: メイン画像を削除する
         image_url: 画像URL
+        facebook_id: facebook ID
+        twitter_id: twitter ID
+        instagram_id: instagram ID
+        facebook_url: facebookURL
+        twitter_url: twitterURL
+        instagram_url: instagramURL

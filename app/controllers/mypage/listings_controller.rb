@@ -62,6 +62,9 @@ class Mypage::ListingsController < ApplicationController
       :content,
       :image_url,
       :tabelog_url,
+      :facebook_url,
+      :twitter_url,
+      :instagram_url,
       foods_attributes: %i[main_image_cache id name main_image price _destroy],
       menus_attributes: %i[image_cache id image _destroy]
     )

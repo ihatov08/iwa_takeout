@@ -83,6 +83,14 @@ class Listing < ApplicationRecord
     %w(大槌 釜石 大船渡 陸前高田 山田)
   end
 
+  SNS = %w(instagram twitter facebook)
+
+  SNS.each do |sns|
+    define_method("#{sns}_url=") do |val|
+      self["#{sns}_id"] = File.basename(val) rescue nil
+    end
+  end
+
   def images_from_website
     return nil unless website_url
     Rails.logger.info website_url
