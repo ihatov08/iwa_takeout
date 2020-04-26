@@ -13,7 +13,7 @@ CSV.open("shops_engan.csv", "a") do |csv|
   start = 2
   finish_num = -1
   shops[start..finish_num].each.with_index(start) do |shop, i|
-    next if Listing.engan_exclude.include?(shop.text)
+    next if %w(山田 大槌 釜石 大船渡 陸前高田).include?(shop.text)
     shop.click
     sleep(1)
     shop_name, biko = browser.all(".qqvbed-p83tee-lTBxed").map(&:text)
@@ -33,7 +33,7 @@ CSV.open("shops_engan.csv", "a") do |csv|
       hrefs[0]
     end
 
-    tel = browser.find(".fO2voc-jRmmHf-LJTIlf").text.match(/\+\d{1,4} \d{1,4}-\d{1,4}-\d{1,4}/).to_s
+    tel = browser.find(".fO2voc-jRmmHf-LJTIlf").text.match(/\+\d{1,4} \d{1,4}-\d{1,4}-\d{1,4}/).to_s rescue nil
 
     back = browser.find(".qqvbed-a4fUwd-LgbsSe-Bz112c").click
     data = [shop_name, biko&.gsub(/\n/, ""), address, homepage_address, google_map_url, tel]

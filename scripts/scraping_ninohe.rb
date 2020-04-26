@@ -8,11 +8,10 @@ more_button.map(&:click)
 
 shops = browser.all(".suEOdc")
 
-CSV.open("shops_ninohe.csv", "a") do |csv|
-  csv << %w(shop_name biko address homepage_address google_map_url)
-  start = 23
+CSV.open("shops_ninohe.csv", "a", headers: %w(shop_name biko address homepage_address google_map_url)) do |csv|
+  start = 2
   shops[start..-1].each.with_index(start) do |shop, i|
-    next if %w(出前).include?(shop)
+    next if %w(出前).include?(shop.text)
     shop.click
     sleep(1)
     shop_name, biko = browser.all(".qqvbed-p83tee-lTBxed").map(&:text)

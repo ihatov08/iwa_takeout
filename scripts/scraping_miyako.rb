@@ -26,9 +26,19 @@ end
 
 CSV.open("shops_miyako.csv", "a") do |csv|
   csv << %w(title description address homepage_address google_map_url tel)
-  start = 2
-  finish_num = 33
+  start = 75
+  finish_num = -1
   shops[start..finish_num].each.with_index(start) do |shop, i|
+    exclude = [
+      "【宮古市】飲食店",
+      "【宮古市】お弁当・出前専門・ファーストフード他",
+      "【山田町】飲食店",
+      "【山田町】お弁当・出前専門・ファーストフード他",
+      "【岩泉町】飲食店",
+      "【岩泉町】お弁当・出前専門・ファーストフード他",
+
+    ]
+    next if  exclude.include?(shop.text)
     shop.click
     sleep(1)
     title = find_by_text(text: "名前", browser: session)
