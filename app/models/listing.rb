@@ -45,7 +45,7 @@ class Listing < ApplicationRecord
   belongs_to :category
   belongs_to :prefecture
   belongs_to :city
-  belongs_to :google_my_map
+  belongs_to :google_my_map, optional: true
 
   with_options presence: true do
     validates :address
