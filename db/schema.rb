@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_143833) do
+ActiveRecord::Schema.define(version: 2020_04_26_011949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,13 @@ ActiveRecord::Schema.define(version: 2020_04_24_143833) do
     t.index ["listing_id"], name: "index_foods_on_listing_id"
   end
 
+  create_table "google_my_maps", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "listing_staffs", force: :cascade do |t|
     t.bigint "listing_id", null: false
     t.bigint "client_staff_id", null: false
@@ -156,8 +163,10 @@ ActiveRecord::Schema.define(version: 2020_04_24_143833) do
     t.string "instagram_id"
     t.text "image_url"
     t.string "tabelog_url"
+    t.bigint "google_my_map_id"
     t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["city_id"], name: "index_listings_on_city_id"
+    t.index ["google_my_map_id"], name: "index_listings_on_google_my_map_id"
     t.index ["prefecture_id"], name: "index_listings_on_prefecture_id"
   end
 
@@ -185,6 +194,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_143833) do
   add_foreign_key "listing_staffs", "listings"
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "cities"
+  add_foreign_key "listings", "google_my_maps"
   add_foreign_key "listings", "prefectures"
   add_foreign_key "menus", "listings"
 end
