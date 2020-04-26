@@ -99,6 +99,16 @@
     </div>
   </div>
 
+  <div class="col-md-6">
+    <div class="form-group">
+      <h3>みちのく繋がるプロジェクト！</h3>
+      <%= f.radio_button :support_project, true %>
+      <%= f.label :support_project, "対象にする" %>
+      <%= f.radio_button :support_project, false %>
+      <%= f.label :support_project, "対象にしない" %>
+    </div>
+  </div>
+
   <div class="col-md-12">
     <div class="form-group">
       <%= f.label :content %>

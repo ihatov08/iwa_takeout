@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_101826) do
+ActiveRecord::Schema.define(version: 2020_04_26_105627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_101826) do
     t.string "tabelog_url"
     t.bigint "google_my_map_id"
     t.string "suspension_information"
+    t.boolean "support_project", default: false, null: false
     t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["city_id"], name: "index_listings_on_city_id"
     t.index ["google_my_map_id"], name: "index_listings_on_google_my_map_id"

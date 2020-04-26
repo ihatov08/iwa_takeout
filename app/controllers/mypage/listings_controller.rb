@@ -66,6 +66,7 @@ class Mypage::ListingsController < ApplicationController
       :twitter_url,
       :instagram_url,
       :suspension_information,
+      :support_project,
       foods_attributes: %i[main_image_cache id name main_image price _destroy],
       menus_attributes: %i[image_cache id image _destroy]
     )

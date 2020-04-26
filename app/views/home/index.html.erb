@@ -76,6 +76,16 @@
             <div class="shop-location-wrapper">
               <%= link_to "編集する", edit_mypage_listing_path(listing), class: "btn p1" %>
             </div>
+            <div class="shop-bottom d-flex border-top">
+              <% if listing.support_project? %>
+                <div class="shop-icon">
+                  <span class="shop-icon-bg shop-icon-bg-yellow">
+                    <i class="fas fa-ticket-alt"></i>
+                  </span>
+                  応援きっぷ対象店舗
+                </div>
+              <% end %>
+            </div>
           </div>
           <% end %>
         </div>

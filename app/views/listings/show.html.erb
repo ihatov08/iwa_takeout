@@ -105,6 +105,12 @@
                   <%= @listing.google_my_map.name %> <i class="fas fa-external-link-alt"></i>
                 <% end %>
               <% end %>
+              <% if @listing.support_project? %>
+                <h3>みちのく繋がるプロジェクト！の対象店舗です</h3>
+                <%= link_to "https://mitinokutunagaru.seesaa.net/article/474470463.html?fbclid=IwAR3YOgxZVnTblT9RZDIwvLx7J1mf7xdi", class: "btn p1", target: "_blank" do %>
+                  コロナに負けるな！みちのく繋がるプロジェクト！ <i class="fas fa-external-link-alt"></i>
+                <% end %>
+              <% end %>
 
               <h3>編集する</h3>
               <%= link_to "編集する", edit_mypage_listing_path(@listing), class: "btn p1" %>

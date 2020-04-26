@@ -12,6 +12,7 @@
 #  main_image             :string
 #  postal_code            :string
 #  published              :boolean          default(FALSE), not null
+#  support_project        :boolean          default(FALSE), not null
 #  suspension_information :string
 #  tabelog_url            :string
 #  tel                    :string
