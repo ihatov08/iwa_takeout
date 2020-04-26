@@ -15,6 +15,11 @@ https://www.google.com/maps/d/u/0/viewer?mid=188u91xWrzFN68HqisSxkDH4rbFxskK7b&l
 二戸
 https://www.google.com/maps/d/viewer?mid=1h99HIj1pZL7OSj_EDI5ITovoCsRXx6av&ll=40.289131919948076%2C141.30288419954945&z=15
 
+盛岡市テイクアウトのできるお店マップ
+https://www.google.com/maps/d/viewer?mid=1POnW2Z-iq0J7TH33HXSrwndSXWuP1Cxs&ll=39.70172987564244%2C141.14710269961552&z=17
+北上
+https://www.google.com/maps/d/viewer?mid=15ovqApDjuC56fFIk_ac4ZVxj6_ma3JOE&ll=39.28575260783608%2C141.11421139947083&z=15
+
 ## template
 
 https://www.iwate-takeout.com
