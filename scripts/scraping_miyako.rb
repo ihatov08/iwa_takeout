@@ -26,7 +26,7 @@ end
 
 CSV.open("shops_miyako.csv", "a") do |csv|
   csv << %w(title description address homepage_address google_map_url tel)
-  start = 75
+  start = 2
   finish_num = -1
   shops[start..finish_num].each.with_index(start) do |shop, i|
     exclude = [
