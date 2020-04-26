@@ -96,9 +96,16 @@
                 </p>
               <% end %>
               <h3>備考</h3>
-              <%= @listing.description %>
+              <%= simple_format @listing.description %>
               <h3>自由欄</h3>
               <%= @listing.content %>
+              <% if @listing.google_my_map %>
+                <h3>引用元</h3>
+                <%= link_to @listing.google_my_map.url, class: "btn btn-primary", target: :_blank do %>
+                  <%= @listing.google_my_map.name %> <i class="fas fa-external-link-alt"></i>
+                <% end %>
+              <% end %>
+
               <h3>編集する</h3>
               <%= link_to "編集する", edit_mypage_listing_path(@listing), class: "btn p1" %>
           </div>
