@@ -1,4 +1,17 @@
 # README
+## setup
+
+```bash
+bin/docker_setup
+```
+
+## 起動方法
+
+```bash
+docker-compose up
+```
+
+http://localhost:3000
 
 ## map情報
 花巻
