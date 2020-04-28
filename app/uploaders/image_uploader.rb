@@ -26,7 +26,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     if cached?
       "/#{cache_path}"
     else
-      super
+      if ENV["ASSET_HOST"]
+        "#{ENV["ASSET_HOST"]}/#{super}"
+      else
+        super
+      end
     end
   end
 
