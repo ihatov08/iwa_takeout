@@ -15,12 +15,8 @@ CSV.open("shops_hanamaki.csv", "a") do |csv|
     shop.click
     sleep(1)
     shop_name, biko = browser.all(".qqvbed-p83tee-lTBxed").map(&:text)
-    p "shop_name #{shop_name}"
-    p "biko #{biko}"
     address = browser.find(".fO2voc-jRmmHf-MZArnb-Q7Zjwb").text rescue nil
-    p "address #{address}"
     hrefs = browser.find(".fO2voc-jRmmHf-LJTIlf").all("a").map{|m| m["href"]} rescue []
-    p hrefs
     homepage_address =
     if hrefs.size == 2
       hrefs[0]
