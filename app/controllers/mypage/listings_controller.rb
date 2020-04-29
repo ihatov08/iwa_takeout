@@ -58,7 +58,6 @@ class Mypage::ListingsController < ApplicationController
       :main_image,
       :main_image_cache,
       :remove_main_image,
-      :published,
       :content,
       :image_url,
       :tabelog_url,
