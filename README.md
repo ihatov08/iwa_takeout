@@ -47,3 +47,9 @@ https://www.iwate-takeout.com
 花巻のテイクアウト、３７店舗情報追加しました！
 
 #いわていくあうと #takeoutIwate #岩手 #TakeOutIwate
+
+## VNC
+google mapのスクレイピングはVNC viewerでブラウザ操作の様子が見れます
+
+IP http://localhost:5900
+pass secret
