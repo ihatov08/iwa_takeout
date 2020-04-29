@@ -34,9 +34,11 @@
     <div class="col-md-8 offset-md-2 text-center">
       <h2 class="section-ttl">コロナに負けるな！みちのく繋がるプロジェクト！</h2>
       <h2 class="section-ttl">
-         <%= image_tag "support_project.jpg" %>
-         <%= link_to "https://mitinokutunagaru.seesaa.net/article/474470463.html?fbclid=IwAR3YOgxZVnTblT9RZDIwvLx7J1mf7xdi", class: "btn p1", target: "_blank" do %>
-           コロナに負けるな！みちのく繋がるプロジェクト！ <i class="fas fa-external-link-alt"></i>
+        <%= link_to "https://mitinokutunagaru.seesaa.net/article/474470463.html?fbclid=IwAR3YOgxZVnTblT9RZDIwvLx7J1mf7xdi", target: "_blank" do %>
+          <%= image_tag "support_project.jpg" %>
+        <% end %>
+         <%= link_to listings_path(q: {support_project_eq: true}), class: "btn p1", target: "_blank" do %>
+           コロナに負けるな！みちのく繋がるプロジェクト！対象店舗を検索
          <% end %>
       </h2>
     </div>

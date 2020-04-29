@@ -21,6 +21,8 @@
           <div class="form-group">
             <label class="pb-30" for="list-title">リスティング検索</label>
             <%= f.collection_select :city_id_eq, City.joins(:listings).distinct.order(:id), :id, :name, { include_blank: "市町村を選択してください" }, class: "form-control custom-select" %>
+            <%= f.check_box :support_project_eq, { }, true, false %>
+            <%= f.label :support_project, "応援キップ対象店舗" %>
           </div>
           <div class="apply-btn">
             <%= f.submit "検索する", class: "btn p1" %>
