@@ -39,6 +39,9 @@ https://www.google.com/maps/d/viewer?mid=1POnW2Z-iq0J7TH33HXSrwndSXWuP1Cxs&ll=39
 ### 北上
 https://www.google.com/maps/d/viewer?mid=15ovqApDjuC56fFIk_ac4ZVxj6_ma3JOE&ll=39.28575260783608%2C141.11421139947083&z=15
 
+### 岩手町
+https://www.google.com/maps/d/viewer?mid=1e4rrz-kkrdp3nm2HBtDLGxIa1XueU1AD&ll=39.949966531603636%2C141.21575040000005&z=13
+
 ## template
 
 https://www.iwate-takeout.com
