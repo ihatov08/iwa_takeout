@@ -72,7 +72,7 @@
               <% if @listing.facebook_id.presence %>
                 <h3>Facebook</h3>
                 <p>
-                  <%= link_to "https://www.facebook.com/#{@listing.instagram_id}", class: "btn p1", target: :_blank do %>
+                  <%= link_to "https://www.facebook.com/#{@listing.facebook_id}", class: "btn p1", target: :_blank do %>
                     facebook <i class="fas fa-external-link-alt"></i>
                   <% end %>
                 </p>
