@@ -106,7 +106,7 @@
         <div class="card">
           <%= link_to food.listing do %>
           <div class="place-img">
-              <%= image_tag food.main_image.url, class: "listing-main-image" %>
+              <%= image_tag food.image_url_or_main_image, class: "listing-main-image" %>
             </div>
             <div class="card-bottom">
               <div class="shop-name">
@@ -137,7 +137,7 @@
         <div class="card">
           <%= link_to menu.listing do %>
             <div class="place-img">
-              <%= image_tag menu.image.url, class: "listing-main-image" %>
+              <%= image_tag menu.image_url_or_image, class: "listing-main-image" %>
             </div>
           <% end %>
         </div>

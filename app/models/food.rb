@@ -3,6 +3,7 @@
 # Table name: foods
 #
 #  id         :bigint           not null, primary key
+#  image_url  :text
 #  main_image :string           not null
 #  name       :string           not null
 #  price      :integer          not null
@@ -27,5 +28,13 @@ class Food < ApplicationRecord
     validates :main_image
     validates :name
     validates :price
+  end
+
+  def image_url_or_main_image
+    if image_url?
+      image_url
+    else
+      main_image.url
+    end
   end
 end

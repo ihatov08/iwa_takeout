@@ -3,6 +3,7 @@
 # Table name: foods
 #
 #  id         :bigint           not null, primary key
+#  image_url  :text
 #  main_image :string           not null
 #  name       :string           not null
 #  price      :integer          not null
