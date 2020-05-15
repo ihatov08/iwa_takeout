@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  image      :string           not null
+#  image_url  :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  listing_id :bigint           not null
@@ -23,5 +24,13 @@ class Menu < ApplicationRecord
 
   with_options presence: true do
     validates :image
+  end
+
+  def image_url_or_image
+    if image_url?
+      image_url
+    else
+      image.url
+    end
   end
 end

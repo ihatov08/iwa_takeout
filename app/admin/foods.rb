@@ -1,5 +1,5 @@
 ActiveAdmin.register Food do
-  permit_params :listing_id, :name, :price, :main_image
+  permit_params :listing_id, :name, :price, :main_image, :image_url
 
   show do
     attributes_table do

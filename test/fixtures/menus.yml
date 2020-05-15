@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  image      :string           not null
+#  image_url  :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  listing_id :bigint           not null
