@@ -31,9 +31,11 @@ class Food < ApplicationRecord
   end
 
   def image_url_or_main_image
-    if image_url?
-      image_url
-    else
+    if main_image?
+      main_image.url
+    elsif sub_image_uri?
+      sub_image_uri
+    elsif condition
       main_image.url
     end
   end

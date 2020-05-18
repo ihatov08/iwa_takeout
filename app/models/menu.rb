@@ -27,8 +27,10 @@ class Menu < ApplicationRecord
   end
 
   def image_url_or_image
-    if image_url?
-      image_url
+    if image?
+      image.url
+    elsif image_sub_uri?
+      image_sub_uri
     else
       image.url
     end
