@@ -119,7 +119,7 @@
       </div>
       <% @listing.foods.each do |food| %>
         <div class="card" id="gallery" style="width: 18rem;">
-          <%= image_tag food.main_image.url, class: "card-img-top" %>
+          <%= image_tag food.image_url_or_main_image, class: "card-img-top" %>
           <div class="card-body">
             <h5 class="card-title"><%= food.name %></h5>
             <p class="card-text"><%= number_to_currency food.price %></p>
@@ -128,7 +128,7 @@
       <% end %>
       <% @listing.menus.each do |menu| %>
         <div class="card" id="gallery" style="width: 18rem;">
-          <%= image_tag menu.image.url, class: "card-img-top" %>
+          <%= image_tag menu.image_url_or_image, class: "card-img-top" %>
         </div>
       <% end %>
       <iframe src="https://maps.google.co.jp/maps?output=embed&q=<%= @listing.title %>&z=16" width="600" height="400" frameborder="0" scrolling="no" ></iframe>
